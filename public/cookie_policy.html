@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms Summarizer - Cookie Policy</title>
+    <link rel="icon" href="images/icon128.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="scrollspy.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="fw-bold text-primary-custom">Terms</span><span class="fw-bold">Summarizer</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="ms-lg-3">
+                <a href="https://microsoftedge.microsoft.com/addons/detail/lkhdepdmlpdikbcbpodoefbaedjfdjog"
+                    class="btn btn-outline-dark" target="_blank">
+                    <i class="fas fa-download me-2"></i>Get Extension
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <nav id="navbar-cookie" class="h-100 flex-column align-items-stretch pe-4 border-end">
+                    <nav class="nav nav-pills flex-column sticky-top" style="top: 20px;">
+                        <a class="nav-link" href="#intro">Introduction</a>
+                        <a class="nav-link" href="#summary">Summary</a>
+                        <a class="nav-link" href="#what-are-cookies">1. What Are Cookies?</a>
+                        <a class="nav-link" href="#cookie-usage">2. Does Extension Use Cookies?</a>
+                        <a class="nav-link" href="#local-storage">3. Do We Use Local Storage?</a>
+                        <a class="nav-link" href="#third-party">4. Third-Party Cookies?</a>
+                        <a class="nav-link" href="#why-matters">5. Why This Matters</a>
+                        <a class="nav-link" href="#verify">6. How Can You Verify?</a>
+                        <a class="nav-link" href="#security">Security Promise</a>
+                        <a class="nav-link" href="#faq">FAQ</a>
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </nav>
+                </nav>
+            </div>
+
+            <div class="col-lg-8">
+                <div data-bs-spy="scroll" data-bs-target="#navbar-cookie" data-bs-smooth-scroll="true"
+                    class="scrollspy-example-2 shadow-sm rounded bg-white p-4" tabindex="0">
+                    <div id="intro">
+                        <p>This Cookie Policy explains if, how, and why the <strong>Terms & Conditions
+                                Summarizer</strong> browser extension uses cookies. The short version? We don't use
+                            them. But here's the full scoop, because we believe in transparency (and we like cookies,
+                            just not digital ones).</p>
+                    </div>
+
+                    <div id="summary">
+                        <h4><span class="emoji-icon">📌</span> Summary</h4>
+                        <div class="highlight">
+                            <p><span class="checkmark">✅</span> We do <strong>not</strong> store cookies.</p>
+                            <p><span class="checkmark">✅</span> We do <strong>not</strong> track your activity across
+                                websites.</p>
+                            <p><span class="checkmark">✅</span> We do <strong>not</strong> collect or sell personal
+                                data.</p>
+                            <p><span class="prohibited">🚫</span> This extension does <strong>not</strong> use analytics
+                                or third-party trackers.</p>
+                        </div>
+                    </div>
+
+                    <div id="what-are-cookies">
+                        <h4>1. What Are Cookies?</h4>
+                        <p>Cookies are small text files stored on your browser by websites you visit. They're typically
+                            used to:</p>
+                        <ul>
+                            <li>Keep you logged in</li>
+                            <li>Track browsing behavior</li>
+                            <li>Store preferences</li>
+                        </ul>
+                        <p>However, browser <strong>extensions</strong> (like this one) do not behave like regular
+                            websites — and that's key to understanding our cookie usage.</p>
+                    </div>
+
+                    <div id="cookie-usage">
+                        <h4>2. Does Terms & Conditions Summarizer Use Cookies?</h4>
+                        <p><strong>Nope. Zero. Zilch. None.</strong></p>
+                        <p>This extension:</p>
+                        <ul>
+                            <li>Does <strong>not</strong> create, store, or access cookies on any website.</li>
+                            <li>Does <strong>not</strong> inject or manipulate cookie behavior in your browser.</li>
+                            <li>Only runs when <strong>you activate it</strong>, and its logic is executed locally.</li>
+                        </ul>
+                        <p>All data used for summarization is processed in real time, then discarded — we don't persist
+                            anything across sessions.</p>
+                    </div>
+
+                    <div id="local-storage">
+                        <h4>3. Do We Use Local Storage?</h4>
+                        <p>We use local extension storage <strong>only</strong> for:</p>
+                        <ul>
+                            <li>Your preferred language setting for translation</li>
+                            <li>Highlight toggle preferences</li>
+                        </ul>
+                        <p>This data:</p>
+                        <ul>
+                            <li>Stays <strong>entirely on your device</strong></li>
+                            <li>Is <strong>never transmitted</strong> to external servers</li>
+                            <li>Can be cleared at any time by uninstalling or resetting the extension</li>
+                        </ul>
+
+                        <div class="code-block">
+                            <code>chrome.storage.local.set({ language: 'en', highlight: true });</code>
+                        </div>
+
+                        <p>No personal identifiers, session IDs, or site logs are stored.</p>
+                    </div>
+
+                    <div id="third-party">
+                        <h4>4. Third-Party Cookies?</h4>
+                        <p>Nope again.</p>
+                        <p>We don't load analytics scripts, social widgets, ad networks, or pixel trackers. That means:
+                        </p>
+                        <ul>
+                            <li>No Google Analytics</li>
+                            <li>No Facebook tracking</li>
+                            <li>No cookies from Gemini or Google Translate APIs</li>
+                        </ul>
+                        <p>All API communication is strictly stateless, done via secure HTTPS requests without cookie
+                            headers.</p>
+                    </div>
+
+                    <div id="why-matters">
+                        <h4>5. Why This Matters</h4>
+                        <p>We believe:</p>
+                        <ul>
+                            <li>Privacy is a <strong>right</strong>, not a toggle</li>
+                            <li>Simplicity beats silent complexity</li>
+                            <li>Tools should work <strong>for</strong> the user, not on them</li>
+                        </ul>
+                        <p>So when we say we don't use cookies — we mean it.</p>
+                    </div>
+
+                    <div id="verify">
+                        <h4>6. How Can You Verify?</h4>
+                        <p>You can:</p>
+                        <ul>
+                            <li>Open Developer Tools → Application → Storage → Cookies — see for yourself.</li>
+                            <li>Monitor network requests via the <strong>Network tab</strong> — no cookies exchanged.
+                            </li>
+                            <li>View the source code on GitHub — it's all transparent.</li>
+                        </ul>
+                    </div>
+
+                    <div id="security">
+                        <h4><span class="emoji-icon">🔒</span> Security Promise</h4>
+                        <p>We operate on three core principles:</p>
+                        <ul>
+                            <li><strong>No tracking</strong></li>
+                            <li><strong>No ads</strong></li>
+                            <li><strong>No profiling</strong></li>
+                        </ul>
+                        <p>Our architecture is intentionally simple to minimize risk.</p>
+                    </div>
+
+                    <div id="faq">
+                        <h4><span class="emoji-icon">🙋</span> Frequently Asked Questions</h4>
+                        <p><strong>Q: Can any cookies be created accidentally?</strong><br>
+                            A: Not by us. If any are created, they may come from third-party websites you're visiting.
+                            Our extension does <strong>not interact</strong> with those cookies.</p>
+
+                        <p><strong>Q: Is extension storage the same as cookies?</strong><br>
+                            A: No. <code>chrome.storage.local</code> is scoped to the extension and is sandboxed — it's
+                            inaccessible to websites and cannot be used to track you.</p>
+
+                        <p><strong>Q: Will future features change this?</strong><br>
+                            A: If we ever introduce cookie usage (unlikely), we'll update this policy and require your
+                            explicit opt-in.</p>
+                    </div>
+
+                    <div id="contact">
+                        <h4><span class="emoji-icon">📬</span> Contact</h4>
+                        <p>Still have questions about cookies, storage, or anything in between?</p>
+                        <p>Email us at <a href="mailto:yourname@example.com"><strong>yourname@example.com</strong></a>.
+                            We're always happy to chat — no tracking involved.</p>
+                        <p class="mt-4">Written with care and cookie-free conscience by the Terms & Conditions
+                            Summarizer team <span class="emoji-icon">🍪</span>❌</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-5">
+        <div class="container text-center">
+            <p>© 2025 Terms & Conditions Summarizer. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Bootstrap scrollspy
+            const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+                target: '#navbar-cookie',
+                offset: 100
+            });
+
+            // Smooth scrolling for nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const scrollContainer = document.querySelector('.scrollspy-example-2');
+                        const offsetTop = targetElement.offsetTop - 20;
+
+                        scrollContainer.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

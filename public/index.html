@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms Summarizer - Simplify Terms & Conditions</title>
+    <link rel="icon" href="/public/images/icon128.png" type="image/x-icon">
+    <!-- Bootstrap CSS CDN -->
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="fw-bold text-primary-custom">Terms</span><span class="fw-bold">Summarizer</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#support">Support</a>
+                    </li>
+                </ul>
+                <div class="ms-lg-3">
+                    <a href="https://microsoftedge.microsoft.com/addons/detail/lkhdepdmlpdikbcbpodoefbaedjfdjog"
+                        class="btn btn-custom" target="_blank">
+                        <i class="fas fa-download me-2"></i>Get Extension
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-primary text-white text-center py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-lg-start">
+                    <h1 class="display-4 fw-bold mb-4">Simplify Terms & Conditions in Seconds</h1>
+                    <p class="lead mb-4">Stop wasting time on lengthy legal agreements. Our extension analyzes and
+                        summarizes Terms & Conditions, Privacy Policies, and more - so you understand what's important.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+                        <a href="#" class="btn btn-light btn-lg">
+                            <i class="fab fa-chrome me-2"></i>Coming Soon to Chrome
+                        </a>
+                        <a href="https://microsoftedge.microsoft.com/addons/detail/lkhdepdmlpdikbcbpodoefbaedjfdjog"
+                            class="btn btn-outline-light btn-lg" target="_blank">
+                            <i class="fab fa-edge me-2"></i>Add to Edge
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-center mt-5 mt-lg-0">
+                    <!-- <img src="/api/placeholder/400/320" alt="Terms Summarizer Extension Screenshot"
+                        class="img-fluid screenshot-img"> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 800 640" width="800" height="640">
+                        <!-- Background -->
+                        <rect x="0" y="0" width="800" height="640" rx="20" ry="20" fill="#f8f9fa" stroke="#e9ecef"
+                            stroke-width="2" />
+
+                        <!-- Browser Window Frame -->
+                        <rect x="40" y="40" width="720" height="560" rx="10" ry="10" fill="white" stroke="#dee2e6"
+                            stroke-width="2" />
+
+                        <!-- Browser Navigation Bar -->
+                        <rect x="40" y="40" width="720" height="50" rx="10" ry="10" fill="#f1f3f5" stroke="#dee2e6"
+                            stroke-width="1" />
+
+                        <!-- URL Bar -->
+                        <rect x="130" y="50" width="500" height="30" rx="5" ry="5" fill="white" stroke="#dee2e6"
+                            stroke-width="1" />
+
+                        <!-- Browser Navigation Icons -->
+                        <circle cx="70" cy="65" r="8" fill="#ff6b6b" />
+                        <circle cx="95" cy="65" r="8" fill="#ffd43b" />
+                        <circle cx="120" cy="65" r="8" fill="#69db7c" />
+
+                        <!-- URL Text -->
+                        <text x="150" y="70" font-family="Arial, sans-serif" font-size="14"
+                            fill="#495057">https://example.com/terms-and-conditions</text>
+
+                        <!-- Extension Icon in Browser -->
+                        <rect x="645" y="52" width="26" height="26" rx="5" ry="5" fill="#4e54c8" />
+                        <text x="658" y="70" font-family="Arial, sans-serif" font-size="16" font-weight="bold"
+                            fill="white" text-anchor="middle">T</text>
+
+                        <!-- Page Content Background -->
+                        <rect x="60" y="110" width="310" height="470" fill="#f8f9fa" stroke="#dee2e6"
+                            stroke-width="1" />
+
+                        <!-- Extension Popup Window -->
+                        <rect x="430" y="110" width="310" height="470" rx="10" ry="10" fill="white" stroke="#4e54c8"
+                            stroke-width="2" filter="drop-shadow(3px 5px 8px rgba(0, 0, 0, 0.15))" />
+
+                        <!-- Extension Header -->
+                        <rect x="430" y="110" width="310" height="60" rx="10" ry="10" fill="#4e54c8" />
+                        <circle cx="460" cy="140" r="15" fill="white" />
+                        <text x="460" y="145" font-family="Arial, sans-serif" font-size="16" font-weight="bold"
+                            fill="#4e54c8" text-anchor="middle">T</text>
+                        <text x="540" y="145" font-family="Arial, sans-serif" font-size="18" font-weight="bold"
+                            fill="white">Terms Summarizer</text>
+
+                        <!-- Summary Title Bar -->
+                        <rect x="445" y="185" width="280" height="40" rx="5" ry="5" fill="#f1f3f5" />
+                        <text x="465" y="210" font-family="Arial, sans-serif" font-size="16" font-weight="bold"
+                            fill="#495057">Summary of Terms & Conditions</text>
+
+                        <!-- Summary Content -->
+                        <!-- Key Points -->
+                        <rect x="445" y="240" width="280" height="30" rx="5" ry="5" fill="#e9ecef" />
+                        <text x="465" y="260" font-family="Arial, sans-serif" font-size="14" font-weight="bold"
+                            fill="#495057">Key Points:</text>
+
+                        <!-- Point 1 -->
+                        <circle cx="455" cy="290" r="6" fill="#4e54c8" />
+                        <text x="470" y="295" font-family="Arial, sans-serif" font-size="14" fill="#212529">Data
+                            Collection Policy</text>
+                        <rect x="445" y="305" width="280" height="2" fill="#f1f3f5" />
+
+                        <!-- Point 2 -->
+                        <circle cx="455" cy="330" r="6" fill="#4e54c8" />
+                        <text x="470" y="335" font-family="Arial, sans-serif" font-size="14" fill="#212529">Payment
+                            Terms</text>
+                        <rect x="445" y="345" width="280" height="2" fill="#f1f3f5" />
+
+                        <!-- Point 3 -->
+                        <circle cx="455" cy="370" r="6" fill="#ff6b6b" />
+                        <text x="470" y="375" font-family="Arial, sans-serif" font-size="14" fill="#212529">Third-Party
+                            Sharing (Important)</text>
+                        <rect x="445" y="385" width="280" height="2" fill="#f1f3f5" />
+
+                        <!-- Point 4 -->
+                        <circle cx="455" cy="410" r="6" fill="#4e54c8" />
+                        <text x="470" y="415" font-family="Arial, sans-serif" font-size="14" fill="#212529">Cancellation
+                            Policy</text>
+                        <rect x="445" y="425" width="280" height="2" fill="#f1f3f5" />
+
+                        <!-- Point 5 -->
+                        <circle cx="455" cy="450" r="6" fill="#4e54c8" />
+                        <text x="470" y="455" font-family="Arial, sans-serif" font-size="14" fill="#212529">Copyright
+                            and Ownership</text>
+                        <rect x="445" y="465" width="280" height="2" fill="#f1f3f5" />
+
+                        <!-- Extension Footer -->
+                        <rect x="445" y="500" width="280" height="60" rx="5" ry="5" fill="#f8f9fa" />
+                        <text x="465" y="530" font-family="Arial, sans-serif" font-size="12" fill="#6c757d">Read time
+                            saved: 15 minutes</text>
+                        <rect x="545" y="515" width="160" height="30" rx="15" ry="15" fill="#4e54c8" />
+                        <text x="625" y="535" font-family="Arial, sans-serif" font-size="14" font-weight="bold"
+                            fill="white" text-anchor="middle">Full Details</text>
+
+                        <!-- Terms & Conditions Text (Original Document) -->
+                        <rect x="75" y="125" width="280" height="30" rx="3" ry="3" fill="#e9ecef" />
+                        <text x="80" y="145" font-family="Arial, sans-serif" font-size="16" font-weight="bold"
+                            fill="#495057">Terms & Conditions</text>
+
+                        <!-- Simulate Text Lines -->
+                        <rect x="75" y="170" width="280" height="3" fill="#e9ecef" />
+                        <rect x="75" y="185" width="260" height="3" fill="#e9ecef" />
+                        <rect x="75" y="200" width="270" height="3" fill="#e9ecef" />
+                        <rect x="75" y="215" width="240" height="3" fill="#e9ecef" />
+                        <rect x="75" y="230" width="280" height="3" fill="#e9ecef" />
+
+                        <rect x="75" y="255" width="280" height="3" fill="#e9ecef" />
+                        <rect x="75" y="270" width="250" height="3" fill="#e9ecef" />
+                        <rect x="75" y="285" width="270" height="3" fill="#e9ecef" />
+                        <rect x="75" y="300" width="280" height="3" fill="#e9ecef" />
+
+                        <rect x="75" y="325" width="280" height="3" fill="#e9ecef" />
+                        <rect x="75" y="340" width="260" height="3" fill="#e9ecef" />
+                        <rect x="75" y="355" width="275" height="3" fill="#e9ecef" />
+                        <rect x="75" y="370" width="240" height="3" fill="#e9ecef" />
+
+                        <rect x="75" y="395" width="280" height="3" fill="#e9ecef" />
+                        <rect x="75" y="410" width="260" height="3" fill="#e9ecef" />
+                        <rect x="75" y="425" width="270" height="3" fill="#e9ecef" />
+                        <rect x="75" y="440" width="280" height="3" fill="#e9ecef" />
+
+                        <rect x="75" y="465" width="280" height="3" fill="#e9ecef" />
+                        <rect x="75" y="480" width="260" height="3" fill="#e9ecef" />
+                        <rect x="75" y="495" width="270" height="3" fill="#e9ecef" />
+                        <rect x="75" y="510" width="240" height="3" fill="#e9ecef" />
+                        <rect x="75" y="525" width="280" height="3" fill="#e9ecef" />
+                        <rect x="75" y="540" width="260" height="3" fill="#e9ecef" />
+                        <rect x="75" y="555" width="270" height="3" fill="#e9ecef" />
+
+                        <!-- Highlighting on Main Document -->
+                        <rect x="75" y="325" width="280" height="20" fill="rgba(255, 107, 107, 0.1)" stroke="none" />
+
+                        <!-- Connector Lines -->
+                        <path d="M 355 335 Q 392.5 335 392.5 370 Q 392.5 405 430 405" stroke="#ff6b6b" stroke-width="2"
+                            stroke-dasharray="5,5" fill="none" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Powerful Features</h2>
+                <p class="lead text-muted">Save time and make informed decisions with our easy-to-use extension</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card card-custom h-100 border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-bolt fa-2x"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Instant Summaries</h3>
+                            <p class="text-muted">Get concise, readable summaries of lengthy Terms & Conditions with a
+                                single click.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-custom h-100 border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-exclamation-circle fa-2x"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Highlight Key Points</h3>
+                            <p class="text-muted">Automatically identifies important clauses and potential red flags in
+                                legal documents.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-custom h-100 border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-globe fa-2x"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Works Everywhere</h3>
+                            <p class="text-muted">Compatible with major websites and platforms where Terms & Conditions
+                                are found.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-custom h-100 border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-lock fa-2x"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Privacy Focused</h3>
+                            <p class="text-muted">Your data stays private. We don't store or collect any of your
+                                personal information.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-custom h-100 border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-desktop fa-2x"></i>
+                            </div>
+                            <h3 class="h4 mb-3">User-Friendly Interface</h3>
+                            <p class="text-muted">Clean, intuitive design makes understanding complex agreements simple.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-custom h-100 border-0">
+                        <div class="coming-soon">
+                            <a href="" class="btn btn-custom" target="_blank">Coming Soon
+                            </a>
+                        </div>
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-history fa-2x"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Save Summaries</h3>
+                            <p class="text-muted">Save and access previous summaries for quick reference anytime.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">How It Works</h2>
+                <p class="lead text-muted">Three simple steps to understand any Terms & Conditions</p>
+            </div>
+            <div class="row g-4 align-items-center">
+                <div class="col-md-4">
+                    <div class="card card-custom border-0 h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="bg-light rounded-circle mb-3 d-inline-flex justify-content-center align-items-center"
+                                style="width: 80px; height: 80px;">
+                                <h3 class="text-primary-custom m-0">1</h3>
+                            </div>
+                            <h4>Install the Extension</h4>
+                            <p class="text-muted">Add Terms Summarizer to your browser with a single click from the
+                                Chrome Web Store or Edge Add-ons.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-custom border-0 h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="bg-light rounded-circle mb-3 d-inline-flex justify-content-center align-items-center"
+                                style="width: 80px; height: 80px;">
+                                <h3 class="text-primary-custom m-0">2</h3>
+                            </div>
+                            <h4>Visit Any Website</h4>
+                            <p class="text-muted">Navigate to a page containing Terms & Conditions, Privacy Policy, or
+                                any lengthy legal document.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-custom border-0 h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="bg-light rounded-circle mb-3 d-inline-flex justify-content-center align-items-center"
+                                style="width: 80px; height: 80px;">
+                                <h3 class="text-primary-custom m-0">3</h3>
+                            </div>
+                            <h4>Get Your Summary</h4>
+                            <p class="text-muted">Click the extension icon and receive an instant, easy-to-understand
+                                summary of the document.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="https://microsoftedge.microsoft.com/addons/detail/lkhdepdmlpdikbcbpodoefbaedjfdjog"
+                    class="btn btn-custom btn-lg" target="_blank">Try It Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">See It In Action</h2>
+                <p class="lead text-muted">Take a closer look at our intuitive interface</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <img src="/public/images/home_page.png" alt="Terms Summarizer Screenshot 1"
+                        class="img-fluid rounded screenshot-img">
+                </div>
+                <div class="col-md-6">
+                    <img src="/public/images//after_summarization.png" alt="Terms Summarizer Screenshot 2"
+                        class="img-fluid rounded screenshot-img">
+                </div>
+                <div class="col-md-6">
+                    <img src="/public/images//translation_menu.png" alt="Terms Summarizer Screenshot 3"
+                        class="img-fluid rounded screenshot-img">
+                </div>
+                <div class="col-md-6">
+                    <img src="/public/images//after_translation.png" alt="Terms Summarizer Screenshot 4"
+                        class="img-fluid rounded screenshot-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">What Users Say</h2>
+                <p class="lead text-muted">Join thousands of satisfied users who save time every day</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card card-custom h-100 border-0 testimonial-card">
+                        <div class="card-body">
+                            <img src="/public/images//male-user-shadow-svgrepo-com.png" class="testimonial-img"
+                                alt="User 1">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="mb-3">"This extension has saved me countless hours. I no longer skip reading Terms
+                                & Conditions because now I can actually understand them quickly!"</p>
+                            <h5 class="mb-1">Divy Parekh</h5>
+                            <p class="text-muted small">Software Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-custom h-100 border-0 testimonial-card">
+                        <div class="card-body">
+                            <img src="/public/images//male-user-shadow-svgrepo-com (1).png" class="testimonial-img"
+                                alt="User 2">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="mb-3">"As someone who signs up for multiple services, this extension has been a
+                                game-changer. It highlights the important points I need to know."</p>
+                            <h5 class="mb-1">Prayesh Patel</h5>
+                            <p class="text-muted small">Software Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-custom h-100 border-0 testimonial-card">
+                        <div class="card-body">
+                            <!-- <img src="/api/placeholder/100/100" class="testimonial-img" alt="User 3"> -->
+                            <img src="/public/images//male-user-shadow-svgrepo-com (2).png" class="testimonial-img"
+                                alt="User 3">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                            </div>
+                            <p class="mb-3">"I recommend this to all my clients. It helps them understand what they're
+                                agreeing to without needing a law degree. Essential tool!"</p>
+                            <h5 class="mb-1">Hard P.</h5>
+                            <p class="text-muted small">Businessman</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Frequently Asked Questions</h2>
+                <p class="lead text-muted">Got questions? We've got answers</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Is Terms Summarizer free to use?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, Terms Summarizer is completely free to use. We believe everyone should have
+                                    access to easy-to-understand Terms & Conditions without barriers.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    How accurate are the summaries?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our summaries highlight the most important points and potential concerns, but
+                                    they're not a replacement for legal advice. We recommend using our summaries as a
+                                    starting point to better understand the document.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Which browsers support Terms Summarizer?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Terms Summarizer is currently available for Microsoft Edge and Google Chrome. We're
+                                    working on support for Firefox and Safari in the near future.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Does the extension collect my data?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    No, Terms Summarizer is built with privacy in mind. We don't collect, store, or
+                                    transmit any of your personal data or browsing history. All processing happens
+                                    locally on your device.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    Can I use this for any website?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Terms Summarizer works on most websites that have Terms & Conditions, Privacy
+                                    Policies, EULAs, and similar legal documents. However, some websites with unusual
+                                    formats or heavy JavaScript might not be fully compatible.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Support & Help</h2>
+                <p class="lead text-muted">We're here to assist you with any questions or issues</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card card-custom h-100 border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-book fa-2x"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Documentation</h3>
+                            <p class="text-muted mb-4">Find answers to common questions in our comprehensive
+                                documentation and user guides.</p>
+                            <a href="#" class="btn btn-outline-primary">In progress</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card card-custom h-100 border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-envelope fa-2x"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Email Support</h3>
+                            <p class="text-muted mb-4">Contact our dedicated support team for personalized assistance
+                                with any issues.</p>
+                            <a href="mailto:patelabhideep02@gmail.com" class="btn btn-outline-primary">Email Us</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-4 col-md-6">
+                    <div class="card card-custom h-100 border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-comments fa-2x"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Community Forum</h3>
+                            <p class="text-muted mb-4">Join our community to discuss features, share tips, and connect
+                                with other users.</p>
+                            <a href="#" class="btn btn-outline-primary">Join Forum</a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <!-- <div class="row mt-5">
+                <div class="col-12">
+                    <div class="card card-custom border-0">
+                        <div class="card-body p-4">
+                            <h3 class="text-center mb-4">Contact Us Directly</h3>
+                            <form id="contactForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="nameInput"
+                                                placeholder="Your Name">
+                                            <label for="nameInput">Your Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="email" class="form-control" id="emailInput"
+                                                placeholder="Your Email">
+                                            <label for="emailInput">Your Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" id="subjectSelect">
+                                                <option selected disabled value="">Select a topic</option>
+                                                <option value="bug">Report a Bug</option>
+                                                <option value="feature">Feature Request</option>
+                                                <option value="question">General Question</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                            <label for="subjectSelect">Subject</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating mb-3">
+                                            <textarea class="form-control" id="messageInput" style="height: 150px"
+                                                placeholder="Your Message"></textarea>
+                                            <label for="messageInput">Your Message</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <button type="submit" class="btn btn-custom btn-lg px-5">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-gradient-primary text-white text-center">
+        <div class="container py-5">
+            <h2 class="display-5 fw-bold mb-4">Ready to Simplify Terms & Conditions?</h2>
+            <p class="lead mb-5">Join thousands of users who save time and make better decisions every day.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#" class="btn btn-light btn-lg">
+                    <i class="fab fa-chrome me-2"></i>Coming Soon to Chrome
+                </a>
+                <a href="https://microsoftedge.microsoft.com/addons/detail/lkhdepdmlpdikbcbpodoefbaedjfdjog"
+                    class="btn btn-outline-light btn-lg" target="_blank">
+                    <i class="fab fa-edge me-2"></i>Add to Edge
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white mb-3">Terms Summarizer</h5>
+                    <p class="text-white">Simplifying the complexity of legal agreements with AI-powered
+                        summaries for
+                        everyone.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <!-- <a href="#" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin fa-lg"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-square-x-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram fa-lg"></i></a> -->
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#features">Features</a></li>
+                        <li class="mb-2"><a href="#how-it-works">How It Works</a></li>
+                        <li class="mb-2"><a href="#faq">FAQ</a></li>
+                        <li class="mb-2"><a href="#support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-3">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Blog (Coming Soon)</a></li>
+                        <li class="mb-2"><a href="#">Documentation</a></li>
+                        <!-- <li class="mb-2"><a href="#">Community</a></li>
+                        <li class="mb-2"><a href="#">Tutorials</a></li> -->
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white mb-3">Stay Updated</h5>
+                    <p class="text-white">Subscribe to our newsletter for updates, tips, and new features.</p>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email" aria-label="Email"
+                                aria-describedby="subscribe-btn">
+                            <button class="btn btn-light" type="button" id="subscribe-btn">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4 bg-light opacity-25">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-white">&copy; 2025 Terms Summarizer. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="privacy_policy.html">Privacy Policy</a></li>
+                        <li class="list-inline-item px-2">|</li>
+                        <li class="list-inline-item"><a href="terms_of_use.html">Terms of Use</a></li>
+                        <li class="list-inline-item px-2">|</li>
+                        <li class="list-inline-item"><a href="cookie_policy.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>

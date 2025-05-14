@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms Summarizer - Documentation</title>
+    <style>
+        :root {
+            --primary-color: #4e54c8;
+            --secondary-color: #8f94fb;
+            --accent-color: #ff6b6b;
+            --text-color: #333333;
+            --background-color: #FFFFFF;
+            --sidebar-bg: #f8f9fa;
+            --code-bg: #F8F9FA;
+            --border-color: #E0E0E0;
+            --highlight-color: #F0F2FF;
+            --warning-color: #FFF8E7;
+            --light-bg: #f8f9fa;
+            --dark-bg: #343a40;
+            --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            --code-font: 'Roboto Mono', monospace;
+        }
+
+        /* Features Icon Styling */
+        .feature-icon {
+            background-color: var(--light-bg);
+            color: var(--primary-color);
+            padding: 15px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-row td:first-child {
+            text-align: center;
+        }
+
+        .feature-row:hover .feature-icon {
+            transform: rotate(10deg);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        /* Coming soon styling */
+        .coming-soon {
+            display: inline-block;
+            max-width: fit-content;
+            margin: 10px 0px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 14px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .main-content {
+                margin-left: 0;
+                max-width: 100%;
+            }
+
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 280px;
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            overflow-y: auto;
+            position: fixed;
+            height: 100vh;
+            padding-bottom: 24px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-header {
+            padding: 24px 16px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .sidebar-header h1 {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .sidebar-version {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        .sidebar-nav {
+            padding: 16px 0;
+        }
+
+        .sidebar-section {
+            padding: 0 16px;
+            margin-bottom: 8px;
+        }
+
+        .sidebar-section-title {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: #757575;
+            margin: 16px 0 8px 0;
+        }
+
+        .sidebar-links {
+            list-style: none;
+        }
+
+        .sidebar-link {
+            padding: 8px 16px;
+            font-size: 14px;
+            color: var(--text-color);
+            text-decoration: none;
+            display: block;
+            border-radius: 4px;
+            margin-bottom: 2px;
+        }
+
+        .sidebar-link:hover {
+            background-color: rgba(78, 84, 200, 0.1);
+        }
+
+        .sidebar-link.active {
+            background-color: var(--highlight-color);
+            color: var(--primary-color);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .sidebar-link.active:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            flex: 1;
+            margin-left: 280px;
+            padding: 24px 32px 64px;
+            max-width: calc(100% - 280px);
+        }
+
+        .breadcrumb {
+            display: flex;
+            font-size: 14px;
+            margin-bottom: 24px;
+            color: #757575;
+        }
+
+        .breadcrumb span {
+            margin: 0 8px;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Content Styles */
+        h1 {
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        h1:after {
+            content: "";
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            bottom: -8px;
+            left: 0;
+            border-radius: 3px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 500;
+            margin: 32px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin: 24px 0 12px;
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        .badges {
+            display: flex;
+            gap: 8px;
+            margin: 16px 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .badge-blue {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .badge-green {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .badge-purple {
+            background-color: #9C27B0;
+            color: white;
+        }
+
+        /* Code Blocks */
+        pre {
+            background-color: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 16px;
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+
+        code {
+            font-family: var(--code-font);
+            font-size: 14px;
+        }
+
+        .code-header {
+            background-color: var(--border-color);
+            padding: 8px 16px;
+            font-family: var(--code-font);
+            font-size: 14px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            border: 1px solid var(--border-color);
+            border-bottom: none;
+        }
+
+        .code-block {
+            margin: 0 0 24px;
+        }
+
+        .code-block pre {
+            margin-top: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        th,
+        td {
+            padding: 12px 16px;
+            text-align: left;
+        }
+
+        th {
+            font-weight: 500;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        tr {
+            background-color: var(--background-color);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        tr:last-child {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: var(--highlight-color);
+            transform: scale(1.01);
+        }
+
+        /* Cards */
+        .card-container {
+            display: flex;
+            gap: 24px;
+            margin: 24px 0;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 280px;
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 24px;
+            background-color: var(--background-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 18px;
+            color: var(--primary-color);
+        }
+
+        /* Notes and Callouts */
+        .note {
+            background-color: var(--highlight-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .note:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(78, 84, 200, 0.1), rgba(143, 148, 251, 0.05));
+            z-index: 0;
+        }
+
+        .note>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .note-icon {
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-right: 8px;
+        }
+
+        /* Images */
+        .image-container {
+            margin: 24px 0;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Footer Navigation */
+        .footer-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-button {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-prev::before {
+            content: "←";
+            margin-right: 8px;
+        }
+
+        .nav-next::after {
+            content: "→";
+            margin-left: 8px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1>Terms Summarizer</h1>
+            <div class="sidebar-version">v1.0.0</div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Get Started</div>
+                <ul class="sidebar-links">
+                    <li><a href="#overview" class="sidebar-link active">Overview</a></li>
+                    <li><a href="#installation" class="sidebar-link">Installation</a></li>
+                    <li><a href="#quick-start" class="sidebar-link">Quick Start</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Features</div>
+                <ul class="sidebar-links">
+                    <li><a href="#features" class="sidebar-link">Features Overview</a></li>
+                    <li><a href="#how-it-works" class="sidebar-link">How It Works</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Technical Guide</div>
+                <ul class="sidebar-links">
+                    <li><a href="#configuration" class="sidebar-link">Configuration</a></li>
+                    <li><a href="#technical-overview" class="sidebar-link">Technical Overview</a></li>
+                    <li><a href="#apis-used" class="sidebar-link">APIs Used</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Resources</div>
+                <ul class="sidebar-links">
+                    <li><a href="#security-privacy" class="sidebar-link">Security & Privacy</a></li>
+                    <li><a href="#troubleshooting" class="sidebar-link">Troubleshooting</a></li>
+                    <li><a href="#faq" class="sidebar-link">FAQ</a></li>
+                    <li><a href="#coming-soon" class="sidebar-link">Coming Soon</a></li>
+                    <li><a href="#support" class="sidebar-link">Support</a></li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="breadcrumb">
+            <a href="#">Home</a> <span>/</span> <a href="#">Documentation</a> <span>/</span> Overview
+        </div>
+
+        <h1 id="overview">Terms & Conditions Summarizer</h1>
+
+        <div class="image-container">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 640"
+                width="800" height="640">
+                <!-- Background -->
+                <rect x="0" y="0" width="800" height="640" rx="20" ry="20" fill="#f8f9fa" stroke="#e9ecef"
+                    stroke-width="2" />
+
+                <!-- Browser Window Frame -->
+                <rect x="40" y="40" width="720" height="560" rx="10" ry="10" fill="white" stroke="#dee2e6"
+                    stroke-width="2" />
+
+                <!-- Browser Navigation Bar -->
+                <rect x="40" y="40" width="720" height="50" rx="10" ry="10" fill="#f1f3f5" stroke="#dee2e6"
+                    stroke-width="1" />
+
+                <!-- URL Bar -->
+                <rect x="130" y="50" width="500" height="30" rx="5" ry="5" fill="white" stroke="#dee2e6"
+                    stroke-width="1" />
+
+                <!-- Browser Navigation Icons -->
+                <circle cx="70" cy="65" r="8" fill="#ff6b6b" />
+                <circle cx="95" cy="65" r="8" fill="#ffd43b" />
+                <circle cx="120" cy="65" r="8" fill="#69db7c" />
+
+                <!-- URL Text -->
+                <text x="150" y="70" font-family="Arial, sans-serif" font-size="14"
+                    fill="#495057">https://example.com/terms-and-conditions</text>
+
+                <!-- Extension Icon in Browser -->
+                <rect x="645" y="52" width="26" height="26" rx="5" ry="5" fill="#4e54c8" />
+                <text x="658" y="70" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white"
+                    text-anchor="middle">T</text>
+
+                <!-- Page Content Background -->
+                <rect x="60" y="110" width="310" height="470" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1" />
+
+                <!-- Extension Popup Window -->
+                <rect x="430" y="110" width="310" height="470" rx="10" ry="10" fill="white" stroke="#4e54c8"
+                    stroke-width="2" filter="drop-shadow(3px 5px 8px rgba(0, 0, 0, 0.15))" />
+
+                <!-- Extension Header -->
+                <rect x="430" y="110" width="310" height="60" rx="10" ry="10" fill="#4e54c8" />
+                <circle cx="460" cy="140" r="15" fill="white" />
+                <text x="460" y="145" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#4e54c8"
+                    text-anchor="middle">T</text>
+                <text x="540" y="145" font-family="Arial, sans-serif" font-size="18" font-weight="bold"
+                    fill="white">Terms Summarizer</text>
+
+                <!-- Summary Title Bar -->
+                <rect x="445" y="185" width="280" height="40" rx="5" ry="5" fill="#f1f3f5" />
+                <text x="465" y="210" font-family="Arial, sans-serif" font-size="16" font-weight="bold"
+                    fill="#495057">Summary of Terms & Conditions</text>
+
+                <!-- Summary Content -->
+                <!-- Key Points -->
+                <rect x="445" y="240" width="280" height="30" rx="5" ry="5" fill="#e9ecef" />
+                <text x="465" y="260" font-family="Arial, sans-serif" font-size="14" font-weight="bold"
+                    fill="#495057">Key Points:</text>
+
+                <!-- Point 1 -->
+                <circle cx="455" cy="290" r="6" fill="#4e54c8" />
+                <text x="470" y="295" font-family="Arial, sans-serif" font-size="14" fill="#212529">Data
+                    Collection Policy</text>
+                <rect x="445" y="305" width="280" height="2" fill="#f1f3f5" />
+
+                <!-- Point 2 -->
+                <circle cx="455" cy="330" r="6" fill="#4e54c8" />
+                <text x="470" y="335" font-family="Arial, sans-serif" font-size="14" fill="#212529">Payment
+                    Terms</text>
+                <rect x="445" y="345" width="280" height="2" fill="#f1f3f5" />
+
+                <!-- Point 3 -->
+                <circle cx="455" cy="370" r="6" fill="#ff6b6b" />
+                <text x="470" y="375" font-family="Arial, sans-serif" font-size="14" fill="#212529">Third-Party
+                    Sharing (Important)</text>
+                <rect x="445" y="385" width="280" height="2" fill="#f1f3f5" />
+
+                <!-- Point 4 -->
+                <circle cx="455" cy="410" r="6" fill="#4e54c8" />
+                <text x="470" y="415" font-family="Arial, sans-serif" font-size="14" fill="#212529">Cancellation
+                    Policy</text>
+                <rect x="445" y="425" width="280" height="2" fill="#f1f3f5" />
+
+                <!-- Point 5 -->
+                <circle cx="455" cy="450" r="6" fill="#4e54c8" />
+                <text x="470" y="455" font-family="Arial, sans-serif" font-size="14" fill="#212529">Copyright
+                    and Ownership</text>
+                <rect x="445" y="465" width="280" height="2" fill="#f1f3f5" />
+
+                <!-- Extension Footer -->
+                <rect x="445" y="500" width="280" height="60" rx="5" ry="5" fill="#f8f9fa" />
+                <text x="465" y="530" font-family="Arial, sans-serif" font-size="12" fill="#6c757d">Read time
+                    saved: 15 minutes</text>
+                <rect x="545" y="515" width="160" height="30" rx="15" ry="15" fill="#4e54c8" />
+                <text x="625" y="535" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white"
+                    text-anchor="middle">Full Details</text>
+
+                <!-- Terms & Conditions Text (Original Document) -->
+                <rect x="75" y="125" width="280" height="30" rx="3" ry="3" fill="#e9ecef" />
+                <text x="80" y="145" font-family="Arial, sans-serif" font-size="16" font-weight="bold"
+                    fill="#495057">Terms & Conditions</text>
+
+                <!-- Simulate Text Lines -->
+                <rect x="75" y="170" width="280" height="3" fill="#e9ecef" />
+                <rect x="75" y="185" width="260" height="3" fill="#e9ecef" />
+                <rect x="75" y="200" width="270" height="3" fill="#e9ecef" />
+                <rect x="75" y="215" width="240" height="3" fill="#e9ecef" />
+                <rect x="75" y="230" width="280" height="3" fill="#e9ecef" />
+
+                <rect x="75" y="255" width="280" height="3" fill="#e9ecef" />
+                <rect x="75" y="270" width="250" height="3" fill="#e9ecef" />
+                <rect x="75" y="285" width="270" height="3" fill="#e9ecef" />
+                <rect x="75" y="300" width="280" height="3" fill="#e9ecef" />
+
+                <rect x="75" y="325" width="280" height="3" fill="#e9ecef" />
+                <rect x="75" y="340" width="260" height="3" fill="#e9ecef" />
+                <rect x="75" y="355" width="275" height="3" fill="#e9ecef" />
+                <rect x="75" y="370" width="240" height="3" fill="#e9ecef" />
+
+                <rect x="75" y="395" width="280" height="3" fill="#e9ecef" />
+                <rect x="75" y="410" width="260" height="3" fill="#e9ecef" />
+                <rect x="75" y="425" width="270" height="3" fill="#e9ecef" />
+                <rect x="75" y="440" width="280" height="3" fill="#e9ecef" />
+
+                <rect x="75" y="465" width="280" height="3" fill="#e9ecef" />
+                <rect x="75" y="480" width="260" height="3" fill="#e9ecef" />
+                <rect x="75" y="495" width="270" height="3" fill="#e9ecef" />
+                <rect x="75" y="510" width="240" height="3" fill="#e9ecef" />
+                <rect x="75" y="525" width="280" height="3" fill="#e9ecef" />
+                <rect x="75" y="540" width="260" height="3" fill="#e9ecef" />
+                <rect x="75" y="555" width="270" height="3" fill="#e9ecef" />
+
+                <!-- Highlighting on Main Document -->
+                <rect x="75" y="325" width="280" height="20" fill="rgba(255, 107, 107, 0.1)" stroke="none" />
+
+                <!-- Connector Lines -->
+                <path d="M 355 335 Q 392.5 335 392.5 370 Q 392.5 405 430 405" stroke="#ff6b6b" stroke-width="2"
+                    stroke-dasharray="5,5" fill="none" />
+            </svg>
+        </div>
+
+        <p>A lightweight browser extension that summarizes complex legal pages like Terms & Conditions and Privacy
+            Policies into simple, easy-to-read bullet points — powered by Gemini Flash 2.0 and optionally translated
+            using Google Translate.</p>
+
+        <div class="badges">
+            <a href="#" class="badge badge-blue">pub v1.0.0</a>
+            <a href="#" class="badge badge-green">build passing</a>
+            <a href="#" class="badge badge-purple">MIT license</a>
+        </div>
+
+        <h2 id="installation">Installation</h2>
+
+        <div class="card-container">
+            <div class="card">
+                <h3>Chrome</h3>
+                <ol>
+                    <li>Open the Chrome Web Store.</li>
+                    <li>Search for "Terms & Conditions Summarizer".</li>
+                    <li>Click <strong>Add to Chrome</strong>.</li>
+                    <li>Pin the extension to your toolbar for quick access.</li>
+                </ol>
+            </div>
+
+            <div class="card">
+                <h3>Microsoft Edge</h3>
+                <ol>
+                    <li>Go to the Edge Add-ons Store.</li>
+                    <li>Search for Terms & Conditions Summarizer.</li>
+                    <li>Click <strong>Get</strong> and confirm.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="note">
+            <span class="note-icon">💡</span> <strong>Note:</strong> You don't need to restart your browser after
+            installation.
+        </div>
+
+        <h2 id="quick-start">Quick Start</h2>
+        <p>Getting started with the Terms & Conditions Summarizer is simple:</p>
+
+        <ol>
+            <li>Visit a webpage that contains Terms & Conditions or similar legal text.</li>
+            <li>Click the extension icon in your browser's toolbar.</li>
+            <li>The extension will:
+                <ul>
+                    <li>Extract the visible legal content from the page.</li>
+                    <li>Generate a summarized version using Gemini Flash 2.0.</li>
+                    <li>Highlight key clauses (e.g., auto-renewals, data-sharing).</li>
+                    <li>Optionally translate the output to your selected language.</li>
+                </ul>
+            </li>
+            <li>View the results in a compact, friendly popup.</li>
+        </ol>
+
+        <div class="code-block">
+            <div class="code-header">example_usage.dart</div>
+            <pre><code>// The extension workflow follows this pattern
+void main() {
+  // Step 1: Visit a webpage with Terms & Conditions
+  final webpage = WebPage('https://example.com/terms');
+  
+  // Step 2: Click the extension icon in browser toolbar
+  final extension = TermsConditionsSummarizer();
+  final result = extension.analyze(webpage);
+  
+  // Step 3: View the processed results
+  print('Summary: ${result.summary}');
+  print('Highlights: ${result.highlights}');
+  print('Translation: ${result.translatedContent}');
+}</code></pre>
+        </div>
+
+        <h2 id="features">Features</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="feature-row">
+                    <td>
+                        <div class="feature-icon">🔍</div>
+                    </td>
+                    <td>One-Click Summarization</td>
+                    <td>Turn long T&Cs into 5–7 sentence summaries instantly</td>
+                </tr>
+                <tr class="feature-row">
+                    <td>
+                        <div class="feature-icon">💡</div>
+                    </td>
+                    <td>Highlight Legal Triggers</td>
+                    <td>Visual indicators for risky clauses</td>
+                </tr>
+                <tr class="feature-row">
+                    <td>
+                        <div class="feature-icon">🌐</div>
+                    </td>
+                    <td>Built-in Translation</td>
+                    <td>Supports 100+ languages via Google Translate API</td>
+                </tr>
+                <tr class="feature-row">
+                    <td>
+                        <div class="feature-icon">⚙️</div>
+                    </td>
+                    <td>Custom Settings</td>
+                    <td>Choose highlight styles and preferred languages</td>
+                </tr>
+                <tr class="feature-row">
+                    <td>
+                        <div class="feature-icon">🧠</div>
+                    </td>
+                    <td>Powered by Gemini AI</td>
+                    <td>Contextual understanding of legal language</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="how-it-works">How It Works</h2>
+
+        <h3>Content Extraction</h3>
+        <p>The extension injects a script into the current tab to extract visible text from containers commonly used in
+            legal documents (<code>&lt;article&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;main&gt;</code>). It
+            filters unrelated content (navbars, footers, etc.) using a weight-based system.</p>
+
+        <div class="code-block">
+            <div class="code-header">content_extractor.dart</div>
+            <pre><code>class ContentExtractor {
+                String extract(Document document) {
+                    // Inject script to extract visible text from common legal containers
+                    final containers = document.querySelectorAll(['article', 'div', 'main']);
+                    
+                    // Filter unrelated content using weight-based system
+                    return containers
+                        .where((element) => _isLegalContent(element))
+                        .map((element) => element.text)
+                        .join('\n');
+                }
+                
+                bool _isLegalContent(Element element) {
+                    // Weight-based filtering algorithm
+                    return element.textContent.containsAny([
+                    'terms', 'conditions', 'privacy', 'policy'
+                    ]);
+                }
+                }</code></pre>
+        </div>
+
+        <h3>Summarization Logic</h3>
+        <p>Summarization is performed using Google Gemini Flash 2.0, optimized for fast responses and accurate
+            contextual breakdowns. The output includes:</p>
+
+        <ul>
+            <li>A general overview of the T&C</li>
+            <li>Risks (e.g., "you agree to arbitration")</li>
+            <li>Data and privacy implications</li>
+            <li>Cancellation/refund terms</li>
+        </ul>
+
+        <div class="code-block">
+            <div class="code-header">summarizer.dart</div>
+            <pre><code>class GeminiSummarizer {
+                Future<Summary> summarize(String content) async {
+                    final gemini = GeminiFlash2();
+                    
+                    // Send content to Gemini Flash 2.0 API
+                    final response = await gemini.summarize(
+                    content: content,
+                    includeSections: [
+                        'overview',
+                        'risks',
+                        'data_privacy',
+                        'cancellation_terms'
+                    ],
+                    );
+                    
+                    return Summary.fromResponse(response);
+                }
+                }</code></pre>
+        </div>
+
+        <h3>Translation (Optional)</h3>
+        <p>If enabled, the summary is sent to the Google Translate API and returned in the user's preferred language.
+        </p>
+
+        <div class="code-block">
+            <div class="code-header">translator.dart</div>
+            <pre><code>class Translator {
+  Future<String> translate({
+    required String text,
+    required String targetLanguage,
+  }) async {
+    final translator = GoogleTranslateAPI();
+    
+    // Send summary to Google Translate API
+    final translated = await translator.translate(
+      text: text,
+      target: targetLanguage,
+    );
+    
+    return translated;
+  }
+}</code></pre>
+        </div>
+
+        <h2 id="configuration">Configuration</h2>
+
+        <h3>Language Settings</h3>
+        <p>You can set your output language from the extension settings page.</p>
+
+        <div class="code-block">
+            <div class="code-header">settings.html</div>
+            <pre><code>&lt;select name="language"&gt;
+  &lt;option value="en"&gt;English&lt;/option&gt;
+  &lt;option value="es"&gt;Spanish&lt;/option&gt;
+  ...
+&lt;/select&gt;</code></pre>
+        </div>
+
+        <h3>Highlight Toggle</h3>
+        <p>Choose to highlight legal triggers like:</p>
+
+        <ul>
+            <li>"We may share your data"</li>
+            <li>"Automatically renews unless cancelled"</li>
+            <li>"No refund policy"</li>
+        </ul>
+
+        <p>You can turn this on/off via the settings menu.</p>
+
+        <h2 id="technical-overview">Technical Overview</h2>
+
+        <h3>File Structure</h3>
+
+        <div class="code-block">
+            <div class="code-header">project_structure.txt</div>
+            <pre><code>termssummarizer/
+├── manifest.json           // Chrome manifest v3
+├── background.js           // Extension lifecycle
+├── content.js              // DOM text extraction
+├── popup.html              // User interface
+├── popup.js                // Main logic controller
+├── style.css               // UI styling
+├── utils/
+│   ├── summarizer.js       // Gemini Flash API integration
+│   └── translator.js       // Google Translate API integration
+└── icons/                  // Assets for different browser sizes</code></pre>
+        </div>
+
+        <h2 id="apis-used">APIs Used</h2>
+
+        <h3>Gemini Flash 2.0</h3>
+        <ul>
+            <li>POST endpoint for summarization</li>
+            <li>Input: Raw legal content</li>
+            <li>Output: Markdown or plain text summary</li>
+            <li>Auth: Bearer Token</li>
+        </ul>
+
+        <h3>Google Translate API</h3>
+        <ul>
+            <li>RESTful</li>
+            <li>Input: Target language + summary</li>
+            <li>Output: Translated summary</li>
+            <li>Auth: API Key</li>
+        </ul>
+
+        <h2 id="security-privacy">Security & Privacy</h2>
+
+        <p>🛡️ No personal data is collected or stored.</p>
+        <p>All text is processed anonymously and statelessly.</p>
+
+        <h3>Permissions</h3>
+
+        <div class="code-block">
+            <div class="code-header">permissions.json</div>
+            <pre><code>{
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["<all_urls>"]
+}</code></pre>
+        </div>
+
+        <p>✅ Complies with Chrome Web Store privacy policies.</p>
+
+        <h2 id="troubleshooting">Troubleshooting</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Issue</th>
+                    <th>Solution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>"No T&C detected"</td>
+                    <td>Reload the page or scroll to trigger dynamic loading</td>
+                </tr>
+                <tr>
+                    <td>"API failed to respond"</td>
+                    <td>Check your internet or Gemini API quota</td>
+                </tr>
+                <tr>
+                    <td>"Translation is blank"</td>
+                    <td>Ensure Google Translate API key is valid</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="faq">FAQ</h2>
+
+        <h3>Can I use this extension offline?</h3>
+        <p>No. It needs internet access to communicate with the Gemini and Translate APIs.</p>
+
+        <h3>Is my browsing data tracked?</h3>
+        <p>No. The extension does not track, log, or store any browsing or usage data.</p>
+
+        <h3>Can I use my own API key?</h3>
+        <p>Enterprise support is being developed. Stay tuned for v2.0.</p>
+
+        <h2 id="coming-soon">Coming Soon</h2>
+
+        <ul>
+            <li>
+                <div class="coming-soon">📝</div> Markdown export of summaries
+            </li>
+            <li>
+                <div class="coming-soon">📂</div> Batch mode for legal document repositories
+            </li>
+            <li>
+                <div class="coming-soon">👨‍⚖️</div> Legal risk scoring (beta)
+            </li>
+        </ul>
+
+        <h2 id="support">Support</h2>
+
+        <p>For bug reports, feature requests, or API integration issues:</p>
+
+        <ul>
+            <li>📧 Email: yourname@example.com</li>
+            <li>🔗 GitHub Issues: github.com/yourname/termssummarizer</li>
+        </ul>
+
+        <!-- Footer Navigation -->
+        <!-- <div class="footer-nav">
+            <a href="#" class="nav-button nav-prev">Installation</a>
+            <a href="#" class="nav-button nav-next">Features</a>
+        </div> -->
+    </main>
+
+    <script>
+        // Add active class to current nav item
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    sidebarLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Add hover effects to table rows
+            const tableRows = document.querySelectorAll('tr');
+            tableRows.forEach(row => {
+                if (!row.parentElement.tagName === 'THEAD') {
+                    row.addEventListener('mouseenter', function () {
+                        this.style.transform = 'scale(1.01)';
+                    });
+
+                    row.addEventListener('mouseleave', function () {
+                        this.style.transform = 'scale(1)';
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

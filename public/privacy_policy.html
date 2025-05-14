@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms Summarizer - Privacy Policy</title>
+    <link rel="icon" href="images/icon128.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="scrollspy.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="fw-bold text-primary-custom">Terms</span><span class="fw-bold">Summarizer</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="ms-lg-3">
+                <a href="https://microsoftedge.microsoft.com/addons/detail/lkhdepdmlpdikbcbpodoefbaedjfdjog"
+                    class="btn btn-outline-dark" target="_blank">
+                    <i class="fas fa-download me-2"></i>Get Extension
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <nav id="navbar-privacy" class="h-100 flex-column align-items-stretch pe-4 border-end">
+                    <nav class="nav nav-pills flex-column sticky-top" style="top: 20px;">
+                        <a class="nav-link" href="#summary">Summary</a>
+                        <a class="nav-link" href="#data-collection">Data Collection</a>
+                        <a class="nav-link" href="#permissions">Permissions</a>
+                        <a class="nav-link" href="#server-data">Server Data</a>
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link ms-3 my-1" href="#gemini-api">Gemini API</a>
+                            <a class="nav-link ms-3 my-1" href="#translate-api">Translate API</a>
+                        </nav>
+                        <a class="nav-link" href="#analytics">Analytics</a>
+                        <a class="nav-link" href="#third-parties">Third Parties</a>
+                        <a class="nav-link" href="#children">Children's Privacy</a>
+                        <a class="nav-link" href="#control">Data Control</a>
+                        <a class="nav-link" href="#updates">Policy Updates</a>
+                        <a class="nav-link" href="#faq">FAQ</a>
+                        <a class="nav-link" href="#contact">Contact Us</a>
+                    </nav>
+                </nav>
+            </div>
+
+            <div class="col-lg-8">
+                <div data-bs-spy="scroll" data-bs-target="#navbar-privacy" data-bs-smooth-scroll="true"
+                    class="scrollspy-example-2 shadow-sm rounded bg-white p-4" tabindex="0">
+                    <div id="intro">
+                        <p>We built Terms & Conditions Summarizer to help you understand complex legal pages in plain
+                            language — not to collect your data, spy on your browsing, or sell anything to advertisers.
+                            This Privacy Policy explains exactly what data we collect (spoiler: very little), how we use
+                            it (we don't), and what you can control (everything).</p>
+                    </div>
+
+                    <div id="summary">
+                        <h4><span class="emoji-icon">📌</span> Summary</h4>
+                        <div class="highlight">
+                            <p><span class="checkmark">✅</span> We don't collect personal data.</p>
+                            <p><span class="checkmark">✅</span> We don't track your browsing activity.</p>
+                            <p><span class="checkmark">✅</span> We don't sell or share anything with third parties.</p>
+                            <p><span class="checkmark">✅</span> We follow the principle: No login, no tracking, no
+                                nonsense.</p>
+                        </div>
+                    </div>
+
+                    <div id="data-collection">
+                        <h4>1. What Data Do We Collect?</h4>
+                        <p><strong>By default: nothing.</strong></p>
+                        <p>The extension runs locally in your browser and performs all summarization tasks on-demand —
+                            initiated by you. We don't require accounts, we don't log actions, and we never ask for
+                            sensitive information.</p>
+
+                        <h5>Minimal Local Storage</h5>
+                        <p>We only store the following settings on your device:</p>
+
+                        <table class="table table-bordered permission-table">
+                            <thead>
+                                <tr>
+                                    <th>Key</th>
+                                    <th>Type</th>
+                                    <th>Purpose</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>language</td>
+                                    <td>string</td>
+                                    <td>Stores your preferred translation language</td>
+                                </tr>
+                                <tr>
+                                    <td>highlight</td>
+                                    <td>bool</td>
+                                    <td>Remembers whether to highlight legal risks</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p>These values are saved using chrome.storage.local and:</p>
+                        <ul>
+                            <li>Stay 100% on your machine</li>
+                            <li>Can be reset or deleted anytime</li>
+                            <li>Are not shared or uploaded</li>
+                        </ul>
+                    </div>
+
+                    <div id="permissions">
+                        <h4>2. What Permissions Do We Use?</h4>
+                        <p>Here's what our extension asks for — and why:</p>
+
+                        <table class="table table-bordered permission-table">
+                            <thead>
+                                <tr>
+                                    <th>Permission</th>
+                                    <th>Why We Need It</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>activeTab</td>
+                                    <td>To read the text on the page you're summarizing</td>
+                                </tr>
+                                <tr>
+                                    <td>storage</td>
+                                    <td>To save your language/highlight preferences locally</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;all_urls&gt;</td>
+                                    <td>To allow the summarizer to work on any site</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="highlight">
+                            <p><strong>Important:</strong> These permissions do not allow us to:</p>
+                            <ul>
+                                <li>Read your browser history</li>
+                                <li>Track which sites you visit</li>
+                                <li>Access cookies or login data</li>
+                            </ul>
+                            <p>We only run when you click the extension, and we never execute code in the background.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="server-data">
+                        <h4>3. Is Any Data Sent to Servers?</h4>
+                        <p>Yes — but only when summarizing or translating, and only the legal text you ask us to
+                            process.</p>
+                    </div>
+
+                    <div id="gemini-api">
+                        <h5>Gemini Flash 2.0 API</h5>
+                        <p>The extension sends selected legal text to Gemini's summarization API.</p>
+                        <ul>
+                            <li>The request is stateless — no cookies, no session, no IP logging.</li>
+                            <li>The result (summary) is immediately shown in the extension UI.</li>
+                        </ul>
+                    </div>
+
+                    <div id="translate-api">
+                        <h5>Google Translate API (optional)</h5>
+                        <p>If enabled, summaries are sent to the Translate API for language conversion.</p>
+                        <ul>
+                            <li>This is opt-in and can be disabled in settings.</li>
+                            <li>Neither API request includes personal data or identifiers.</li>
+                        </ul>
+                    </div>
+
+                    <div id="analytics">
+                        <h4>4. Do We Use Analytics?</h4>
+                        <p><strong>No.</strong></p>
+                        <p>We don't use:</p>
+                        <ul>
+                            <li>Google Analytics</li>
+                            <li>Segment</li>
+                            <li>Mixpanel</li>
+                            <li>Any telemetry or fingerprinting system</li>
+                        </ul>
+                        <p>We don't care where you click. We just want the extension to work.</p>
+                    </div>
+
+                    <div id="third-parties">
+                        <h4>5. Do We Share Data with Third Parties?</h4>
+                        <p><strong>Never.</strong></p>
+                        <p>We do not — and will never — sell, share, or trade user data. We're not an ad-tech company,
+                            and we don't rely on monetization through data brokering.</p>
+                    </div>
+
+                    <div id="children">
+                        <h4>6. Children's Privacy</h4>
+                        <p>This extension is not intended for use by children under 13. That said, we don't collect
+                            personal information from anyone — child or adult — so there's no risk of accidental data
+                            handling.</p>
+                    </div>
+
+                    <div id="control">
+                        <h4>7. How Can You Control Your Data?</h4>
+                        <p>You're in full control at all times.</p>
+                        <p>You can:</p>
+                        <ul>
+                            <li>View or reset settings via the extension menu.</li>
+                            <li>Remove the extension anytime from Chrome or Edge.</li>
+                            <li>Clear all extension data from browser settings (chrome://extensions → "Details" → "Clear
+                                data").</li>
+                        </ul>
+                    </div>
+
+                    <div id="updates">
+                        <h4>8. Updates to This Policy</h4>
+                        <p>We may update this Privacy Policy if we add features that affect your data. But:</p>
+                        <ul>
+                            <li>We'll never sneak in tracking or analytics.</li>
+                            <li>We'll always post updates here.</li>
+                            <li>We'll clearly highlight changes in the extension UI if needed.</li>
+                        </ul>
+                    </div>
+
+                    <div id="faq">
+                        <h4><span class="emoji-icon">🙋</span> FAQ</h4>
+                        <!-- <p><strong>Q: Do you store anything in the cloud?</strong><br>
+                            A: No. All processing is local, and any API calls are stateless.</p>
+
+                        <p><strong>Q: Can I audit what data is sent?</strong><br>
+                            A: Yes. Use the browser DevTools → Network tab to inspect every request.</p>
+
+                        <p><strong>Q: Will future features include accounts or sign-ins?</strong><br>
+                            A: Not planned. If that changes, it will be 100% optional and explained upfront.</p> -->
+                        <section id="faq" class="">
+                            <div class="container">
+                                <!-- <div class="text-center mb-5">
+                                    <h2 class="display-5 fw-bold">Frequently Asked Questions</h2>
+                                    <p class="lead text-muted">Got questions? We've got answers</p>
+                                </div> -->
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8">
+                                        <div class="accordion" id="faqAccordion">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingOne">
+                                                    <button class="accordion-button" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                        aria-expanded="true" aria-controls="collapseOne">
+                                                        Do you store anything in the cloud?
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                                    aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                                    <div class="accordion-body">
+                                                        No. All processing is local, and any API calls are stateless.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingTwo">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                        aria-expanded="false" aria-controls="collapseTwo">
+                                                        Can I audit what data is sent?
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseTwo" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                                    <div class="accordion-body">
+                                                        Yes. Use the browser DevTools → Network tab to inspect every
+                                                        request.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingThree">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                        aria-expanded="false" aria-controls="collapseThree">
+                                                        Will future features include accounts or sign-ins?
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseThree" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                                    <div class="accordion-body">
+                                                        Not planned. If that changes, it will be 100% optional and
+                                                        explained upfront.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <div id="contact">
+                        <h4><span class="emoji-icon">📬</span> Contact Us</h4>
+                        <p>Got privacy questions, feedback, or cookie jokes?</p>
+                        <p>Email us at <a href="mailto:patelabhideep02@gmail.com">patelabhideep02@gmail.com</a><br>
+                            We'll reply — no bots, no spam, no data harvesting.</p>
+                        <p class="mt-4"><em>Simple tools should respect your privacy. Ours does — by design.</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-5">
+        <div class="container text-center">
+            <p>© 2025 Terms & Conditions Summarizer. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Bootstrap scrollspy
+            const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+                target: '#navbar-privacy',
+                offset: 100
+            });
+
+            // Smooth scrolling for nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const scrollContainer = document.querySelector('.scrollspy-example-2');
+                        const offsetTop = targetElement.offsetTop - 20;
+
+                        scrollContainer.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
